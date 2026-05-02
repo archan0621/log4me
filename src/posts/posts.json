@@ -1,0 +1,6 @@
+{
+  "layout": "layouts/base.njk",
+  "isPost": true,
+  "tags": "posts",
+  "permalink": "/posts/{{ page.fileSlug }}/"
+}

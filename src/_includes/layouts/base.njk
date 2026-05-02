@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if title %}{{ title }} - {% endif %}Archan's Log4Me</title>
+    <meta name="description" content="생각을 천천히 적어두는 개인 블로그">
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <a class="site-title" href="/">
+          Archan's Log4Me
+        </a>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <div class="wrapper">
+        {% if isPost %}
+          <article class="post">
+            <header class="post-header">
+              <p class="eyebrow">note / {{ date | htmlDateString }}</p>
+              <h1 class="post-title">{{ title }}</h1>
+            </header>
+
+            <div class="post-content">
+              {{ content | safe }}
+            </div>
+
+            <p class="back-link"><a href="/">index로 돌아가기</a></p>
+          </article>
+        {% else %}
+          {{ content | safe }}
+        {% endif %}
+      </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+  </body>
+</html>
