@@ -5,9 +5,12 @@
   "description": "A quiet Markdown-powered static blog.",
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve --quiet"
+    "dev": "eleventy --serve --quiet",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2"
+    "@11ty/eleventy": "^3.1.2",
+    "wrangler": "^4.87.0"
   }
 }
