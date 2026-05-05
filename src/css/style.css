@@ -144,7 +144,7 @@ a:hover {
 .post-title {
   max-width: 680px;
   color: var(--text);
-  font-size: clamp(30px, 5vw, 44px);
+  font-size: clamp(27px, 5vw, 41px);
   font-weight: 700;
   line-height: 1.16;
   letter-spacing: 0;
