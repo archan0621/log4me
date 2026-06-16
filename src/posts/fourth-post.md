@@ -18,9 +18,9 @@ Life os는 또 뭐냐고요?
 제 투자 포트폴리오 목표와 현재 비중을 자동으로 조절하여 매수 의견을 주기도 했습니다.  
 
 <p align="center">
-  <img src="../images/4-1.PNG" width="32%" />
-  <img src="../images/4-2.PNG" width="32%" />
-  <img src="../images/4-3.PNG" width="32%" />
+  <img src="/images/4-1.PNG" width="32%" />
+  <img src="/images/4-2.png" width="32%" />
+  <img src="/images/4-3.png" width="32%" />
 </p>
 
 핵심은 첫번째 사진의 타임라인 기능이였는데  

@@ -1,5 +1,6 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
+  eleventyConfig.addPassthroughCopy({ "src/images": "images" });
 
   eleventyConfig.addFilter("readableDate", function (value) {
     return new Intl.DateTimeFormat("ko-KR", {
