@@ -1,23 +1,108 @@
 ---
 layout: layouts/base.njk
-title: 글 목록
+title: 홈
+description: 기록하고, 만들고, 오래 생각하는 개인 공간입니다.
 ---
 
-<section class="home">
-  <h1 class="post-list-heading">Posts</h1>
+<section class="home-intro">
+  <h1>개발자 박종하입니다.</h1>
+  <p>
+    백엔드와 인프라를 메인으로 하고, 프로덕트를 구성하는 모든것에 관심이 있습니다. 
+  </p>
+</section>
+
+<section class="home-section">
+  <h2>지금의 방향</h2>
+  <p>
+    저는 삶을 더 잘 기억하고, 이해하고, 선택하기 위한 도구를 만들고 있습니다. <br>
+    개발은 그 과정에서 사용하는 언어이고, 관심의 중심에는 언제나 사람과 맥락이 있습니다.
+    <br>
+    <br>
+    저로 인해 행복해졌으면 하는 사람들이 있는 팀에서 일하고 있습니다.
+  </p>
+</section>
+
+<section class="home-section">
+  <h2>관심사</h2>
+  <ul class="plain-list">
+    <li>
+      <span>01</span>
+      <div>
+        <strong>Life OS</strong>
+        <p>삶의 무의식 데이터를 조용히 모으고, 다시 꺼내 의식을 복구 할 수 있는 형태로 정리하는 일.</p>
+      </div>
+    </li>
+    <li>
+      <span>02</span>
+      <div>
+        <strong>Software Engineering</strong>
+        <p>오래 버티는 구조, 명확한 경계, 예측 가능한 시스템을 만드는 일.</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section class="home-section">
+  <h2>만드는 것</h2>
+  <div class="link-list">
+    <a href="/posts/why-does-root-exist/">
+      <span>Root</span>
+      <p>내 삶의 모든 데이터를 검색 가능한 기억으로 바꾸는 개인 Life OS.</p>
+    </a>
+    <a href="/blog/">
+      <span>Log4Me</span>
+      <p>생각을 빠르게 남기고, 나중에 다시 읽기 위한 작은 블로그.</p>
+    </a>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2>오래 붙잡는 질문</h2>
+  <ul class="plain-list">
+    <li>
+      <span>01</span>
+      <div>
+        <strong>기억은 어떻게 다시 살아나는가</strong>
+        <p>흩어진 기록과 맥락이 다시 연결될 때, 사람은 자기 삶을 얼마나 더 잘 이해할 수 있을까.</p>
+      </div>
+    </li>
+    <li>
+      <span>02</span>
+      <div>
+        <strong>LLM으로 인간의 인지편향을 뛰어넘을 수 있을 것 인가</strong>
+        <p>뇌의 수많은 편향속에서 LLM이 내가 진정 원하는것을 찾아줄 수 있을까?</p>
+      </div>
+    </li>
+    <li>
+      <span>03</span>
+      <div>
+        <strong>인생이라는 거대한 파도를 어떻게 잘 탈 수 있을까</strong>
+        <p>설명을 달기 제일 어려운 질문이네요, 조금만 더 겪어보고 적겠습니다. ㅎ</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section class="home-section">
+  <div class="section-title-row">
+    <h2>최근 글</h2>
+    <a href="/blog/">전체 보기</a>
+  </div>
 
   {% if collections.postsByDate.length %}
-    <ul class="post-list">
+    <ul class="post-list compact-post-list">
       {% for post in collections.postsByDate %}
-        <li>
-          <a class="post-link" href="{{ post.url }}">
-            <time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time>
-            <span>{{ post.data.title }}</span>
-          </a>
-        </li>
+        {% if loop.index0 < 3 %}
+          <li>
+            <a class="post-link" href="{{ post.url }}">
+              <time datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString }}</time>
+              <span>{{ post.data.title }}</span>
+            </a>
+          </li>
+        {% endif %}
       {% endfor %}
     </ul>
   {% else %}
-    <p>아직 쓴 글이 없습니다.</p>
+    <p class="muted">아직 쓴 글이 없습니다.</p>
   {% endif %}
 </section>
